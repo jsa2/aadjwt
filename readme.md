@@ -45,7 +45,10 @@ const options = {
 
 # How to test
 #### 0. Git Clone
-- Clone the application from GitHub
+- Clone the application from GitHub 
+```
+git clone https://github.com/jsa2/aadjwt.git
+```
 #### 1. Register app 'NodeAPI' 
 - Leave redirect URI empty 
 ![](/img/CreateNodeAPI.png)
