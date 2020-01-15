@@ -7,7 +7,7 @@ ExpressJS has an middleware building pattern which is suitable for building func
 This pattern is extremely well suited for scenarios where you want the function to cover large part of the application without adding separate logic for each route. Such scenarios might be authorization and logging for example.
 
 
- Reason I built this middleware was to understand how to use Azure AD App registration s and JSONWebToken libraries with ExpressJS in a minimal way which achieves the main purpose of the authorization logic. 
+ Reason I built this middleware was to understand how to use Azure AD App registrations and JSONWebToken libraries with ExpressJS in a minimal way which achieves the main purpose of the authorization logic. 
 
 Existing solutions recommended for production include incorporating well known NPM modules such PassPortJS (https://github.com/jaredhanson/passport) and/or JWKS-RSA+JSONWebToken. 
 This project uses JSONWebToken and replaces JWKS-RSA metadata call with simple request to Azure AD metadata endpoint. The InternalClient code in the project is redundant (50%), but it's there to get somebody testing this library quickly forward.
