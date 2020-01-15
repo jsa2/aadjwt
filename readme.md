@@ -20,8 +20,8 @@ This project uses JSONWebToken and replaces JWKS-RSA metadata call with simple r
 - Recommended: Test the app in Private browsing mode, so it does not use your existing sign-in context (If are part of Office 365 tenant, or maintain other Azure AD related environments)
 
 ###  Options
-- Below are the options for creating two App registration s, one for the API, and one for the client
-- AllowInternalAPIClient if set to true means that the application calls itself with the clientID provided. 
+- Below are the options for creating two App registrations, one for the API, and one for the client.
+- AllowInternalAPIClient if set to true means that the application calls itself with the clientID provided.
     - AllowInternalAPIClient is demo client built in to the application itself, which wouldn't be actually used in production. If your aiming for a more production-like scenario, keep the AllowInternalAPIClient:false
     - In order to initiate the Authorization Code flow the Middleware allows /token path to be called without the authorization header. 
     - This could also be achieved with single client as AzureAD allows the API to call itself as a client when using the appID as audience. In this scenario especially if youre not using the internalClient, having separate client is much better design pattern as it creates two distinct parties and allows separation of client and application 
