@@ -14,7 +14,7 @@ This project uses JSONWebToken and replaces JWKS-RSA metadata call with simple r
 
 
 ### Pre-requirements
-- Azure AD tenant and permissions to add App registrations
+- **Azure AD tenant** and permissions to add App registrations
 - NodeJS (The installation typically includes NPM)
 - VScode (Optional but recommended)
 - Recommended: Test the app in Private browsing mode, so it does not use your existing sign-in context (If are part of Office 365 tenant, or maintain other Azure AD related environments)
@@ -24,7 +24,7 @@ This project uses JSONWebToken and replaces JWKS-RSA metadata call with simple r
 - AllowInternalAPIClient if set to true means that the application calls itself with the clientID provided.
     - AllowInternalAPIClient is demo client built in to the application itself, which wouldn't be actually used in production. If your aiming for a more production-like scenario, keep the AllowInternalAPIClient:false
     - In order to initiate the Authorization Code flow the Middleware allows /token path to be called without the authorization header. 
-    - This could also be achieved with single client as AzureAD allows the API to call itself as a client when using the appID as audience. In this scenario especially if youre not using the internalClient, having separate client is much better design pattern as it creates two distinct parties and allows separation of client and application 
+    - This could also be achieved with single client as AzureAD allows the API to call itself as a client when using the appID as audience. In this scenario especially if youre not using the internalClient, having separate client is much better design pattern as it creates two distinct parties and allows separation of client and application. 
 - To get going populate the following options from values of the guide starting from step 1:
 
 ### Example options (Dont use the same values for TenantID and ClientID)
@@ -66,7 +66,7 @@ const options = {
 
 #### 3. Register app 'NodeClient'
 - Set the 'Redirect URI' to http://localhost:3000/token
-- Ensure that the client is set to **'Public client'**. The demo client doesn't pass client_secret, so if you want to test with confidential client you have to use your own client, and 'AllowInternalAPIClient:false'
+- Ensure that the client is set to **'Public client'**. The demo doesn't pass client_secret, so if you want to test with confidential client you have to use your own client, and 'AllowInternalAPIClient:false'
 
 - if the client type is set wrong, you will see the following error:
 
@@ -77,7 +77,7 @@ Possibly wrong client type: Check that the Client has redirect uri set to public
 
 ![](img/ClientAndTenantProperties.png)
 
-#### 4. Add API delegate permissions for the NodeClient with the selection 'Add a permission'
+#### 4. Add API delegate permissions to the Node Client for the NodeAPI with the selection 'Add a permission'
 
 - Name of the API is the API we exposed in step two
 
@@ -102,7 +102,7 @@ const options = {
 }
 ```
 
-### Example from this guide
+### Example based on this guide
 ```javascript
 const tenantId = "f996ef8a-f93b-47e5-9ed9-a9d5e5b95245"
 const options = {
