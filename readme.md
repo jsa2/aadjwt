@@ -60,9 +60,6 @@ const options = {
     audience:"https://jwtapi.dewi.red",
 ```
 
-![](img/exposeAPI.png)
-
-
 
 #### 3. Register app 'NodeClient'
 - Set the 'Redirect URI' to http://localhost:3000/token
