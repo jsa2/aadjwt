@@ -15,6 +15,7 @@ This project uses JSONWebToken and replaces JWKS-RSA metadata call with simple r
 
 ### Pre-requirements
 - **Azure AD tenant** and permissions to add App registrations
+- GIT Client, such as https://git-scm.com/downloads
 - NodeJS (The installation typically includes NPM)
 - VScode (Optional but recommended)
 - Recommended: Test the app in Private browsing mode, so it does not use your existing sign-in context (If are part of Office 365 tenant, or maintain other Azure AD related environments)
